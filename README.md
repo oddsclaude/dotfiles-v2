@@ -44,7 +44,7 @@ cp -r dotfiles-v2 ~/.config/hypr
 ```
 
 ## ⚙️ Config Structure
-.config/hypr/
+```.config/hypr/
 ├── colors.lua
 ├── hyprland.lua
 └── parts
@@ -66,3 +66,4 @@ cp -r dotfiles-v2 ~/.config/hypr
 ├── config.json
 ├── matugen_colors.css
 └── style.css
+```
