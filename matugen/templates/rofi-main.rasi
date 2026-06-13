@@ -1,0 +1,94 @@
+configuration {
+    modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    icon-theme:                 "Papirus";
+    display-drun:               " ";
+    display-run:                " ";
+    display-filebrowser:        " ";
+    display-window:             " ";
+    
+    drun-display-format:        "{name}";
+    window-format:              "{c} · {t}";
+}
+
+* {
+    background:     {{colors.surface.default.hex}};
+    background-alt: {{colors.surface_container.default.hex}};
+    foreground:     {{colors.on_surface.default.hex}};
+    primary:        {{colors.primary.default.hex}};
+    active:         {{colors.tertiary.default.hex}};
+    urgent:         {{colors.error.default.hex}};
+}
+
+window {
+    width:            860px;   /* Wide layout matching target */
+    height:           440px;
+    border:           2px solid;
+    border-radius:    14px 14px 0px 0px; /* Sharp bottom corners so it sits perfectly flush */
+    border-color:     @primary;/* Dynamic primary accent border */
+    background-color: @background;
+    padding:          35px 30px 20px 30px;
+
+    /* Absolute bottom placement with zero gaps */
+    location:         south;
+    anchor:           south;
+    y-offset:         0px;     /* Stripped the margin so it rides the bottom edge */
+}
+
+mainbox {
+    orientation:      vertical;
+    background-color: transparent;
+    children:         [ "inputbar", "listview" ];
+}
+
+inputbar {
+    background-color: @background-alt;
+    border-radius:    10px;
+    padding:          14px 18px;
+    margin:           0px 0px 30px 0px;
+    children:         [ "entry" ];
+}
+
+entry {
+    text-color:        @foreground;
+    background-color:  transparent;
+    placeholder:       "Search";
+    placeholder-color: @foreground;
+}
+
+listview {
+    lines:            3;
+    columns:          4;
+    background-color: transparent;
+    spacing:          25px;
+    flow:             horizontal;
+}
+
+element {
+    padding:          16px 10px;
+    border-radius:    12px;
+    background-color: transparent;
+    text-color:       @foreground;
+    orientation:      vertical; /* Icon directly above the text like the target */
+    spacing:          14px;
+}
+
+element selected.normal {
+    background-color: @primary;
+    text-color:       @background;
+}
+
+element-icon {
+    background-color: transparent;
+    size:             48px;
+    cursor:           inherit;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    wrap:             false;    /* Single-line truncation (...) like target */
+}

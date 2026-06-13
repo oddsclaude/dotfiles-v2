@@ -1,0 +1,84 @@
+# ~/.config/matugen/templates/starship.toml
+
+add_newline = false
+
+# Added intentional spacing between segments so they don't look like a single blob
+format = """
+$cmd_duration $directory $git_branch $python $rust
+  $character"""
+
+palette = 'colors'
+
+[palettes.colors]
+mustard = '#af8700' 
+vicmd_yellow = '#f9e2af'
+error_red = '{{colors.error.default.hex}}'
+color1 = '{{colors.primary_fixed_dim.default.hex}}'       # Directory Bg
+color2 = '{{colors.on_primary.default.hex}}'            # Directory Fg
+color3 = '{{colors.on_surface_variant.default.hex}}'    # Accent text
+color4 = '{{colors.surface_container.default.hex}}'      # Darker container bg
+color5 = '{{colors.on_primary_container.default.hex}}'  # High contrast text for color4
+color6 = '{{colors.surface_dim.default.hex}}'
+color7 = '{{colors.surface.default.hex}}'
+color8 = '{{colors.primary.default.hex}}'              # Git Bg
+color9 = '{{colors.tertiary.default.hex}}'
+
+[fill]
+symbol = '-'
+style = 'fg:color3'
+
+[character]
+success_symbol = "[ ](bold fg:color8)"
+error_symbol = "[ ](bold fg:error_red)"
+vicmd_symbol = "[🞈](bold fg:vicmd_yellow)"
+
+[package]
+disabled = true
+
+[directory]
+home_symbol = " "
+read_only = "  "
+style = "bg:color1 fg:color2"
+truncation_length = 2
+truncation_symbol = ".../"
+# Caps strictly use fg:color1 to match the bg:color1 of the path text
+format = '[](fg:color1)[󰉋 → $path]($style)[](fg:color1)'
+
+[directory.substitutions]
+"Desktop" = "  "
+"Documents" = "  "
+"Downloads" = "  "
+"Music" = " 󰎈 "
+"Pictures" = "  "
+"Videos" = "  "
+"GitHub" = " 󰊤 "
+
+[cmd_duration]
+min_time = 0
+# Switched inner text to color5 for crisp readability against the color4 background
+format = '[](fg:color4)[󰪢 $duration](bg:color4 fg:color5)[](fg:color4)'
+
+[git_branch]
+symbol = "󰘬"
+truncation_length = 12
+truncation_symbol = ""
+format = '[](fg:color8)[$symbol $branch(:$remote_branch)](bg:color8 fg:color2)[](fg:color8)'
+
+[python]
+symbol = '🐍 '
+pyenv_prefix = 'venv'
+format = '[](fg:color4)[${symbol}${version}](bg:color4 fg:color5)[](fg:color4)'
+
+[rust]
+symbol = "🦀 "
+format = '[](fg:color4)[$symbol$version](bg:color4 fg:color5)[](fg:color4)'
+
+# Keep these clean and disabled unless you use them
+[hostname]
+disabled = true
+
+[username]
+disabled = true
+
+[line_break]
+disabled = false

@@ -11,11 +11,9 @@
 ## 🎯 Overview
 
 This config drops the traditional waybar/panel entirely. All info you need comes from:
-- **Ly** lock screen (shows time/battery)
-- **Waybar hidden mode** or **no bar at all**
-- Native Hyprland notifications
-- Workspace indicators via animations
-
+- **no bar at all**
+- no workspace indicator, still deciding what bar to use
+ **Dyncamic theming** using matugen
 ## 📦 Requirements
 
 ```bash
@@ -32,6 +30,10 @@ jetbrains-mono-nerd  # Font you probably use
 ```
 
 ## 🚀 Installation
+
+```bash
+sudo pacman -S awww swaync matugen kitty ttf-jetbrains-mono-nerd hyprland
+```
 
 ```bash
 # Clone to your dotfiles

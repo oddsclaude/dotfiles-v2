@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "source": "matugen",
+    "variant": "{{mode}}"
+  },
+
+  "editor.background": "{{colors.surface.default.hex}}",
+  "editor.foreground": "{{colors.on_surface.default.hex}}",
+  "editorLineNumber.foreground": "{{colors.on_surface_variant.default.hex}}",
+  "editorLineNumber.activeForeground": "{{colors.primary.default.hex}}",
+  "editorCursor.foreground": "{{colors.primary.default.hex}}",
+  "editor.selectionBackground": "{{colors.surface_container_highest.default.hex}}",
+  "editor.inactiveSelectionBackground": "{{colors.surface_container_high.default.hex}}",
+  "editor.lineHighlightBackground": "{{colors.surface_container_low.default.hex}}",
+  "editor.findMatchBackground": "{{colors.tertiary_container.default.hex}}80",
+  "editor.findMatchHighlightBackground": "{{colors.tertiary_container.default.hex}}40",
+  "editor.wordHighlightBackground": "{{colors.secondary_container.default.hex}}40",
+  "editor.wordHighlightStrongBackground": "{{colors.secondary_container.default.hex}}60",
+  "editor.hoverHighlightBackground": "{{colors.surface_container_high.default.hex}}",
+
+}

@@ -1,0 +1,75 @@
+
+[config]
+reload_apps = true
+
+
+[config.wallpaper]
+
+# Whether to set wallpaper or not 
+set = true
+# The command to set the wallpaper using the {{ image }} placeholder
+command = "awww img --transition-type center {{ image }}"
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/colors.lua'
+post_hook = 'hyprctl reload'
+
+# [templates.ghostty]
+# input_path = '~/.config/matugen/templates/ghostty'
+# output_path = '~/.config/ghostty/themes/Matugen'
+# post_hook = 'pkill -SIGUSR2 -x ghostty'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill waybar; waybar & disown'
+
+[templates.swaync]
+input_path = "~/.config/matugen/templates/colors.css"
+output_path = "~/.config/swaync/colors.css"
+post_hook = "swaync-client -rs"
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = '~/.config/matugen/post-hook-scripts/gtk-themes-reload.sh'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.fish]
+input_path = '~/.config/matugen/templates/fish.fish'
+output_path = '~/.config/fish/conf.d/matugen_colors.fish'
+post_hook = 'fish -c "source ~/.config/fish/conf.d/matugen_colors.fish"'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.nvchad]
+input_path = '~/.config/matugen/templates/nvchad.lua'
+output_path = '~/.config/nvim/lua/matugen_colors.lua'
+# Optional: Force NvChad to re-compile its theme cache every time the wallpaper changes
+# post_hook = 'nvim --headless -c "Base46Compile" -c "q"'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-main.rasi'
+output_path = '~/.config/rofi/main.rasi'
+
+
+# [templates.quickshell]
+# input_path = '~/.config/matugen/templates/Theme.qml'
+# output_path = '~/.config/quickshell/Theme.qml'
+# post_hook = '~/.config/quickshell/launch.sh'
