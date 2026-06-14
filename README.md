@@ -1,8 +1,8 @@
 # dotfiles-v2
 
-# 🌊 Barless Hyprland Config
+# 🌊 Quickshell Hyprland Config
 
-> A minimal, barless Hyprland rice for those who want a clean desktop without status bars cluttering their screen.
+> A minimal, Quikshell Hyprland rice for those who want a clean desktop without status bars cluttering their screen.
 
 ![Hyprland Version](https://img.shields.io/badge/Hyprland-v0.45.0-blue)
 ![Wayland](https://img.shields.io/badge/Wayland-Yes-green)
@@ -11,9 +11,9 @@
 ## 🎯 Overview
 
 This config drops the traditional waybar/panel entirely. All info you need comes from:
-- **no bar at all**
-- no workspace indicator, still deciding what bar to use
- **Dyncamic theming** using matugen
+- **Quickshell config, stolen from Monoland**
+- **Dyncamic theming** using matugen
+- **power menu and swaync, rofi replacement in pure QML**
 ## 📦 Requirements
 
 ```bash
@@ -24,7 +24,7 @@ giflib
 
 # Required deps
 awww # wallpaper
-swaync              # Notifications (or warn)
+qs
 Kitty            # Terminal (or your fav)
 jetbrains-mono-nerd  # Font you probably use
 ```
@@ -32,7 +32,7 @@ jetbrains-mono-nerd  # Font you probably use
 ## 🚀 Installation
 
 ```bash
-sudo pacman -S awww swaync matugen kitty ttf-jetbrains-mono-nerd hyprland
+sudo pacman -S awww quickshell matugen kitty ttf-jetbrains-mono-nerd hyprland
 ```
 
 ```bash
