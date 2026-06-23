@@ -5,7 +5,7 @@ Text {
     id: clockText
     color: "#F5E2C5"
     font {
-        family: "SF Mono"
+        family: "Jetbrains Mono Nerd Font"
         pixelSize: 15
         weight: Font.DemiBold
     }
